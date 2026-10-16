@@ -10,11 +10,48 @@ Small Claude Code skills that don't bloat your context. Three plugins:
 
 ## Install
 
+### Option 1: Plugin (recommended)
+
+Inside Claude Code:
+
 ```
 /plugin marketplace add mbsdeepak/mbsdeepak-skills
 /plugin install response-style@mbsdeepak-skills
 /plugin install learning@mbsdeepak-skills
 /plugin install dev-workflow@mbsdeepak-skills
+```
+
+Or run `/plugin` and pick from the marketplace. Get updates with `/plugin marketplace update mbsdeepak-skills`.
+Plugin skills may appear namespaced (e.g. `/learning:quiz`) if a name clashes with one of your own.
+
+### Option 2: Copy the skills
+
+No plugin system needed. Copy everything, or just the folders you want:
+
+```
+git clone https://github.com/mbsdeepak/mbsdeepak-skills
+cp -R mbsdeepak-skills/plugins/*/skills/* ~/.claude/skills/
+```
+
+Use `<project>/.claude/skills/` instead to scope them to one project.
+
+### Option 3: Share with a team
+
+Add to your project's `.claude/settings.json`. Teammates are prompted to install when they open the project:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "mbsdeepak-skills": {
+      "source": { "source": "github", "repo": "mbsdeepak/mbsdeepak-skills" }
+    }
+  },
+  "enabledPlugins": {
+    "response-style@mbsdeepak-skills": true,
+    "learning@mbsdeepak-skills": true,
+    "dev-workflow@mbsdeepak-skills": true
+  }
+}
 ```
 
 ## License
