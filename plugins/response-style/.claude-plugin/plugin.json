@@ -1,0 +1,7 @@
+{
+  "name": "response-style",
+  "description": "Control how Claude answers: terse, simple, exhaustive, face-value, Socratic, critical, comparative, plan-only.",
+  "version": "0.1.0",
+  "author": { "name": "mbsdeepak" },
+  "license": "MIT"
+}

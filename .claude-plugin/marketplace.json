@@ -1,0 +1,10 @@
+{
+  "name": "skills",
+  "owner": { "name": "mbsdeepak" },
+  "metadata": { "description": "Small, no-bloat Claude Code skills for answering style, learning, and dev chores.", "version": "0.1.0" },
+  "plugins": [
+    { "name": "response-style", "source": "./plugins/response-style", "description": "Control how Claude answers: /tldr /eli5 /deep-dive /follow /socratic /critique /compare /plan-only" },
+    { "name": "learning", "source": "./plugins/learning", "description": "Study tools: /quiz /mock-interview /flashcards /paper /til" },
+    { "name": "dev-workflow", "source": "./plugins/dev-workflow", "description": "Repo chores: /commit /new-repo /readme /handoff" }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "learning",
+  "description": "Study tools: quizzes from your notes, mock interviews, flashcards, paper summaries, TIL log.",
+  "version": "0.1.0",
+  "author": { "name": "mbsdeepak" },
+  "license": "MIT"
+}

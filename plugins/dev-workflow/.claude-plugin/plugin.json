@@ -1,0 +1,7 @@
+{
+  "name": "dev-workflow",
+  "description": "Everyday repo chores: clean commits, new repo scaffold, README, session handoff.",
+  "version": "0.1.0",
+  "author": { "name": "mbsdeepak" },
+  "license": "MIT"
+}
