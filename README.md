@@ -1,4 +1,4 @@
-# skills
+# mbsdeepak-skills
 
 Small Claude Code skills that don't bloat your context. Three plugins:
 
@@ -11,10 +11,10 @@ Small Claude Code skills that don't bloat your context. Three plugins:
 ## Install
 
 ```
-/plugin marketplace add <path-or-github-repo>
-/plugin install response-style@skills
-/plugin install learning@skills
-/plugin install dev-workflow@skills
+/plugin marketplace add mbsdeepak/mbsdeepak-skills
+/plugin install response-style@mbsdeepak-skills
+/plugin install learning@mbsdeepak-skills
+/plugin install dev-workflow@mbsdeepak-skills
 ```
 
 ## License

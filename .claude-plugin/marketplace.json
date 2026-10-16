@@ -1,5 +1,5 @@
 {
-  "name": "skills",
+  "name": "mbsdeepak-skills",
   "owner": { "name": "mbsdeepak" },
   "metadata": { "description": "Small, no-bloat Claude Code skills for answering style, learning, and dev chores.", "version": "0.1.0" },
   "plugins": [

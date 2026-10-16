@@ -2,6 +2,10 @@
   "name": "response-style",
   "description": "Control how Claude answers: terse, simple, exhaustive, face-value, Socratic, critical, comparative, plan-only.",
   "version": "0.1.0",
-  "author": { "name": "mbsdeepak" },
-  "license": "MIT"
+  "author": {
+    "name": "mbsdeepak"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mbsdeepak/mbsdeepak-skills",
+  "repository": "https://github.com/mbsdeepak/mbsdeepak-skills"
 }
