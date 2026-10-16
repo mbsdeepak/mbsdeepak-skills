@@ -80,5 +80,37 @@ Run `/sdlc-init` once per repo. It creates `intent/`, `REVIEW.md`, `bands.yaml`,
 
 Hooks catch the agent's normal file tools and obvious shell commands. They're guardrails, not a security boundary.
 
+### Day-to-day usage
+
+Use the loop for real changes and skip it for small ones.
+
+**Setup, once per repo:** run `/sdlc-init`, fill in the `<...>` placeholders in `REVIEW.md` and `bands.yaml`, and commit. On a shared repo, agree on it with your team first.
+
+**New feature or ticket**
+```
+/intent #142            → review intent/<change>/intent.md, set status: approved
+/spec <change>          → resolve flagged concerns, approve
+/build-plan <change>    → check files/order/proof, approve
+/build-plan <change>    → run again: builds, runs the verifier, opens the PR
+/pr-review              → fix blockers, merge
+/release-prep <change>  → a human writes .release-authorization, deploys, deletes it
+```
+Each approval is a short read. Most of the human time goes into the spec and plan reviews, which is where the decisions get made.
+
+**Bug fix:** same flow, but the plan says "failing test first". Claude commits the failing test and creates `intent/.tests-locked`, so it has to fix the code instead of weakening the test. A human deletes the lock after merge.
+
+**Reviewing a PR,** even outside the loop: `/pr-review 231` gives findings ranked by severity against `REVIEW.md`.
+
+**Alert fires:** `/band-triage p95_latency_ms 2σ "spike after 14:05 deploy"` gives a read-only diagnosis and a draft `intent.md`. Then the owner decides: fix now (continue at `/spec`), schedule it, or dismiss it. Once fixed, add a case to `evals/`.
+
+**Skip the loop** for typos, config bumps, one-line fixes, and refactors with no behaviour change. Just use `/commit`. Rule of thumb: if you'd write a design doc or ticket for it, use the loop.
+
+**Tips**
+- Parallel work: one git worktree and one session per change.
+- Pausing: `/handoff` before you stop. The `intent/<change>/` files plus `HANDOFF.md` show where you left off.
+- If a command name clashes with another skill, use the full form, e.g. `/ai-sdlc:intent`.
+- When `/pr-review` keeps flagging noise, add it to `REVIEW.md` under "Ignore". When it misses something, add a repo rule.
+- Start with one real ticket on a low-stakes repo to find the rough edges.
+
 ## License
 MIT
