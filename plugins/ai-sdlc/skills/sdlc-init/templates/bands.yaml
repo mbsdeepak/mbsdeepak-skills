@@ -1,0 +1,18 @@
+# Control bands. Detection is deterministic (your monitoring job), not the model.
+# A breach is passed to /band-triage with the metric and sigma level.
+baseline_days: 30
+rules: western_electric   # catches slow drift as well as spikes
+
+metrics:
+  - name: <p95_latency_ms>
+    source: <dashboard URL or query>
+    owner: <team or person>
+
+tiers:
+  1: log        # record only
+  2: diagnose   # Claude diagnoses read-only, writes intent.md
+  3: act        # Claude may also open a fix PR (normal review gate) or run a runbook below
+
+# Pre-approved runbooks Claude may run at tier 3 (production commands still need .release-authorization).
+runbooks:
+  rollback: <command or doc link>

@@ -1,10 +1,32 @@
 {
   "name": "mbsdeepak-skills",
-  "owner": { "name": "mbsdeepak" },
-  "metadata": { "description": "Small, no-bloat Claude Code skills for answering style, learning, and dev chores.", "version": "0.1.0" },
+  "owner": {
+    "name": "mbsdeepak"
+  },
+  "metadata": {
+    "description": "Small, no-bloat Claude Code skills for answering style, learning, dev chores, and an AI-native SDLC loop.",
+    "version": "0.2.0"
+  },
   "plugins": [
-    { "name": "response-style", "source": "./plugins/response-style", "description": "Control how Claude answers: /tldr /eli5 /deep-dive /follow /socratic /critique /compare /plan-only" },
-    { "name": "learning", "source": "./plugins/learning", "description": "Study tools: /quiz /mock-interview /flashcards /paper /til" },
-    { "name": "dev-workflow", "source": "./plugins/dev-workflow", "description": "Repo chores: /commit /new-repo /readme /handoff" }
+    {
+      "name": "response-style",
+      "source": "./plugins/response-style",
+      "description": "Control how Claude answers: /tldr /eli5 /deep-dive /follow /socratic /critique /compare /plan-only"
+    },
+    {
+      "name": "learning",
+      "source": "./plugins/learning",
+      "description": "Study tools: /quiz /mock-interview /flashcards /paper /til"
+    },
+    {
+      "name": "dev-workflow",
+      "source": "./plugins/dev-workflow",
+      "description": "Repo chores: /commit /new-repo /readme /handoff"
+    },
+    {
+      "name": "ai-sdlc",
+      "source": "./plugins/ai-sdlc",
+      "description": "AI-native SDLC loop: /sdlc-init /intent /spec /build-plan /pr-review /release-prep /band-triage + gate hooks + verifier agent"
+    }
   ]
 }

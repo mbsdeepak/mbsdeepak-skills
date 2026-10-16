@@ -1,0 +1,9 @@
+{
+  "name": "ai-sdlc",
+  "description": "AI-native SDLC loop: intent → spec → plan → build → review → release → control-band triage → next intent. Human approval gates enforced by hooks.",
+  "version": "0.1.0",
+  "author": { "name": "mbsdeepak" },
+  "license": "MIT",
+  "homepage": "https://github.com/mbsdeepak/mbsdeepak-skills",
+  "repository": "https://github.com/mbsdeepak/mbsdeepak-skills"
+}
